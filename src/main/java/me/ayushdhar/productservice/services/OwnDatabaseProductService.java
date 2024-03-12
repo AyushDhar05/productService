@@ -15,4 +15,9 @@ public class OwnDatabaseProductService implements ProductService {
         return null;
     }
 
+    @Override
+    public Product createProduct(String title, double price, String category, String description, String image) {
+        return null;
+    }
+
 }

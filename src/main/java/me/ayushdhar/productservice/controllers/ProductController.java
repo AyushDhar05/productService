@@ -1,11 +1,9 @@
 package me.ayushdhar.productservice.controllers;
+import me.ayushdhar.productservice.DTOs.CreateProductRequestDTO;
 import me.ayushdhar.productservice.models.Product;
 import me.ayushdhar.productservice.services.ProductService;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @Controller
@@ -17,8 +15,14 @@ public class ProductController {
     }
 
     @PostMapping("/products")
-    public void createProduct() {
-
+    public Product createProduct(@RequestBody CreateProductRequestDTO newProductDTO) {
+        return productService.createProduct(
+                newProductDTO.getTitle(),
+                newProductDTO.getPrice(),
+                newProductDTO.getCategory(),
+                newProductDTO.getDescription(),
+                newProductDTO.getImage()
+        );
     }
 
     @GetMapping("/products/{id}")
@@ -30,8 +34,6 @@ public class ProductController {
     public void getAllProducts() {
 
     }
-
-
     public void updateProduct() {
 
     }
