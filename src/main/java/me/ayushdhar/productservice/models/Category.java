@@ -1,5 +1,6 @@
 package me.ayushdhar.productservice.models;
 
+import jakarta.persistence.Entity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,8 +10,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-
-public class Category {
-    private Long id;
+@Entity
+public class Category extends BaseModel {
     private String title;
 }

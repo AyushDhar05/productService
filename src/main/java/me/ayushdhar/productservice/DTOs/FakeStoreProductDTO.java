@@ -1,12 +1,16 @@
 package me.ayushdhar.productservice.DTOs;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import me.ayushdhar.productservice.models.Category;
 import me.ayushdhar.productservice.models.Product;
 
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class FakeStoreProductDTO {
     private Long id;
     private String title;
